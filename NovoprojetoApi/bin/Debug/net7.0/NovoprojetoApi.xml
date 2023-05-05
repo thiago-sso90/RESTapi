@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NovoprojetoApi</name>
+    </assembly>
+    <members>
+        <member name="M:NovoprojetoApi.Controllers.EventeController.GetAll">
+            <summary>
+            Obter todos os eventos
+            </summary>
+            <returns>Coleção de eventos</returns>
+            <response code = "200"></response>
+        </member>
+        <member name="M:NovoprojetoApi.Controllers.EventeController.GetById(System.Guid)">
+            <summary>
+            obter um Evento
+            </summary>
+            <param name="id">Identificador do Evento</param>
+            <returns>Dados do evento</returns>
+            <response code = "200">Sucesso</response>
+            <responde code = "404">Não encotrado</responde>
+        </member>
+        <member name="M:NovoprojetoApi.Controllers.EventeController.Post(NovoprojetoApi.Entidades.DevEvent)">
+            <summary>
+            Cadastrar um Evento
+            </summary>
+            <remarks>
+             Objeto json {"titulo": string, "descricao": string, "dataInicial": 2023-05-04T20:00:57.630Z, "dataFinal": 2023-05-04T20:00:57.630Z}
+            </remarks>
+            <param name="devEvent">Dados do Evento</param>
+            <returns>Objeto recem-criado</returns>
+        </member>
+        <member name="M:NovoprojetoApi.Controllers.EventeController.Update(System.Guid,NovoprojetoApi.Entidades.DevEvent)">
+            <summary>
+             Atualiza um evento
+            </summary>
+            <remarks>
+             Objeto json {"titulo": string, "descricao": string, "dataInicial": 2023-05-04T20:00:57.630Z, "dataFinal": 2023-05-04T20:00:57.630}
+            </remarks>
+            <param name="id">Identifacor do evento</param>
+            <param name="input">Dados do evento</param>
+            <returns> Nada </returns>
+            <responde code = "404">Não encontrado</responde>
+            <responde code = "204">Sucesso</responde>
+        </member>
+        <member name="M:NovoprojetoApi.Controllers.EventeController.Delete(System.Guid)">
+            <summary>
+            Deletar um evento
+            </summary>
+            <param name="id">Identificador de um Evento</param>
+            <returns>Nada</returns>
+            <response code = "404">Não encontardo</response>
+            <response code = "204">Sucesso</response>
+        </member>
+        <member name="M:NovoprojetoApi.Controllers.EventeController.PostPalestrnte(System.Guid,NovoprojetoApi.Entidades.DevEventSpeaker)">
+            <summary>
+            Cadastrar palestrante
+            </summary>
+            <remarks>
+            objeto Json { "nome": string,  "tituloPalestra": string,"tiuloDescricao": string, "perfilLinkedin": string,}
+            </remarks>
+            <param name="id">Identificador do evento</param>
+            <param name="palestrante">Dados do Palestrante</param>
+            <returns>Nada</returns>
+            <resonse code ="404">Evento Nao encontrado</resonse>
+            <response code = "204">Sucesso</response>
+        </member>
+        <member name="T:NovoprojetoApi.Migrations.InitialDB">
+            <inheritdoc />
+        </member>
+        <member name="M:NovoprojetoApi.Migrations.InitialDB.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:NovoprojetoApi.Migrations.InitialDB.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:NovoprojetoApi.Migrations.InitialDB.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
